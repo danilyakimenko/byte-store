@@ -1,15 +1,23 @@
-import { Geist, Geist_Mono, Roboto } from "next/font/google"
+import type { Metadata } from "next"
+import { Geist_Mono, Roboto } from "next/font/google"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
+import { Header } from "@/components/shared"
 
-const roboto = Roboto({subsets:['latin'],variable:'--font-sans'})
+const roboto = Roboto({ subsets: ["cyrillic"], variable: "--font-sans" })
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 })
+
+export const metadata: Metadata = {
+  title:
+    "Byte-Store – интернет-магазин цифровой и бытовой техники по доступным ценам.",
+  description:
+    "Большой ассортимент электроники, цифровой и бытовой техники, а также товаров для дома, известных брендов в интернет-магазине Byte-Store по отличным ценам. Гарантия и сервис. Доставка!",
+}
 
 export default function RootLayout({
   children,
@@ -20,10 +28,16 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", roboto.variable)}
+      className={cn(
+        "antialiased",
+        fontMono.variable,
+        "font-sans",
+        roboto.variable
+      )}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <Header />
+        <main className="min-h-screen">{children}</main>
       </body>
     </html>
   )
