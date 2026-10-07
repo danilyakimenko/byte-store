@@ -2,7 +2,7 @@ import { ProductsGroup } from "@/components/shared/products-group"
 
 const productsGroupItems = [
   {
-    title: "Комплектующие для ПК",
+    title: "Ноутбуки",
     products: [
       {
         id: 1,
@@ -64,7 +64,7 @@ const productsGroupItems = [
     categoryId: 1,
   },
   {
-    title: "Видеокарты",
+    title: "Наушники и гарнитуры",
     products: [
       {
         id: 11,

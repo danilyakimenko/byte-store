@@ -32,7 +32,11 @@ export const ProductsGroup: FC<Props> = ({
   }, [categoryId, intersection?.isIntersecting, title])
 
   return (
-    <section className="grid gap-10" id={title} ref={intersectionRef}>
+    <section
+      className="grid scroll-mt-30 gap-10"
+      id={title}
+      ref={intersectionRef}
+    >
       <Title
         className="font-bold"
         size="lg"
