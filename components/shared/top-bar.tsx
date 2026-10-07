@@ -17,6 +17,7 @@ export const TopBar: React.FC<Props> = ({ className }) => {
     >
       <Categories />
       <SortPopup />
+      <hr className="absolute bottom-0 left-1/2 h-[1px] w-screen -translate-x-1/2 border-border" />
     </div>
   )
 }
