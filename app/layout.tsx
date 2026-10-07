@@ -35,7 +35,7 @@ export default function RootLayout({
         roboto.variable
       )}
     >
-      <body className="flex flex-col gap-y-10">
+      <body className="flex flex-col gap-y-5">
         <Header />
         <main className="min-h-screen">
           <Container>{children}</Container>

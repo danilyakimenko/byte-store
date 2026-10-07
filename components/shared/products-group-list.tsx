@@ -1,37 +1,125 @@
 import React from "react"
-import { ProductCard } from "@/components/shared/product-card"
-import { Title } from "@/components/shared/title"
+import { ProductsGroup } from "@/components/shared/products-group"
 
-interface Props {
-  className?: string
-  title: string
-  products: any[]
-  listClassName?: string
-  categoryId: number
-}
+const productsGroupItems = [
+  {
+    title: "Комплектующие для ПК",
+    products: [
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+    ],
+    categoryId: 1,
+  },
+  {
+    title: "Бытовые товары",
+    products: [
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+      {
+        id: 0,
+        name: "RTX 5090",
+        price: 395,
+        imageSrc: "https://moqimg.ru/215x215.png",
+      },
+    ],
+    categoryId: 2,
+  },
+]
 
-export const ProductsGroupList: React.FC<Props> = ({
-  className,
-  title,
-  products,
-  listClassName,
-  categoryId,
-}) => {
+export const ProductsGroupList = () => {
   return (
-    <section className={className}>
-      <Title className="font-bold" size="md" text={title}/>
-      <ul className="grid grid-cols-3 gap-[50px]">
-        {products.map(({ id, name, imageSrc, price }) => (
-          <li key={id}>
-            <ProductCard
-              id={id}
-              name={name}
-              imageSrc={imageSrc}
-              price={price}
-            />
-          </li>
-        ))}
-      </ul>
-    </section>
+    <ul className="flex flex-col gap-20">
+      {productsGroupItems.map((productGroupItem) => (
+        <li key={productGroupItem.categoryId}>
+          <ProductsGroup {...productGroupItem} />
+        </li>
+    ))}
+  </ul>
   )
 }
