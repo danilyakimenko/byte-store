@@ -3,7 +3,6 @@ import { ProductCard } from "@/components/shared/product-card"
 import { Title } from "@/components/shared/title"
 
 interface Props {
-  className?: string
   title: string
   products: any[]
   listClassName?: string
@@ -11,16 +10,15 @@ interface Props {
 }
 
 export const ProductsGroup: React.FC<Props> = ({
-  className,
   title,
   products,
   listClassName,
   categoryId,
 }) => {
   return (
-    <section className={className}>
+    <section className="grid gap-10">
       <Title className="font-bold" size="lg" text={title}/>
-      <ul className="grid grid-cols-3 gap-[50px]">
+      <ul className="grid grid-cols-3 gap-5">
         {products.map(({ id, name, imageSrc, price }) => (
           <li key={id}>
             <ProductCard

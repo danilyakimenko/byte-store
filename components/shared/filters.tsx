@@ -10,7 +10,7 @@ export const Filters = () => {
     <aside className="flex flex-col gap-6">
       <Title
         className="font-bold"
-        size="sm"
+        size="md"
         text="Фильтрация"
       />
 
@@ -25,7 +25,7 @@ export const Filters = () => {
         />
       </div>
 
-      <div className="grid gap-3">
+      <div className="grid gap-5">
         <p className="font-bold">Цена от и до:</p>
         <div className="flex gap-3">
           <Input
@@ -38,7 +38,7 @@ export const Filters = () => {
           <Input
             type="number"
             placeholder="98000"
-            min={100}
+            min={0}
             max={98000}
           />
         </div>

@@ -3,14 +3,12 @@
 import React, { useState } from "react"
 import { FilterCheckbox, FilterCheckboxProps } from "./filter-checkbox"
 import { Input } from "@/components/ui"
-import { cn } from "cn"
 
 type Item = FilterCheckboxProps
 
 interface Props {
   title: string
   items: Item[]
-  className?: string
   defaultItems: Item[]
   limit?: number
   searchInputPlaceholder?: string
@@ -24,7 +22,6 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
   defaultItems,
   limit = 6,
   searchInputPlaceholder = "Поиск...",
-  className,
   onChange,
   defaultValues,
 }) => {
@@ -40,7 +37,7 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
     : defaultItems.slice(0, limit)
 
   return (
-    <div className={cn("grid gap-y-4", className)}>
+    <div className="grid gap-y-4">
       <p className="font-bold">{title}</p>
       {showAll && (
         <Input

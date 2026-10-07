@@ -6,24 +6,17 @@ import { Button } from "@/components/ui"
 import { Plus } from "lucide-react"
 
 interface Props {
-  className?: string
   id: number
   name: string
   price: number
   imageSrc: string
 }
 
-export const ProductCard: React.FC<Props> = ({
-  className,
-  id,
-  name,
-  price,
-  imageSrc,
-}) => {
+export const ProductCard: React.FC<Props> = ({ id, name, price, imageSrc }) => {
   return (
-    <article className={className}>
+    <article className="border border-gray-200 p-4 rounded-2xl">
       <Link href={`/product/${id}`}>
-        <div className="flex h-[260px] items-center justify-center rounded-lg bg-secondary p-6">
+        <div className="flex h-[260px] items-center justify-center rounded-lg">
           <Image
             width={215}
             height={215}
@@ -38,9 +31,7 @@ export const ProductCard: React.FC<Props> = ({
         />
         <p className="text-sm text-gray-400">Описание товара</p>
         <div className="flex items-center justify-between gap-2">
-          <span className="text-[20px]">
-            от <b>{price}₽</b>
-          </span>
+          <b className="text-xl">{price} ₽</b>
           <Button
             className="text-base font-bold"
             variant="secondary"
