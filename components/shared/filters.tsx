@@ -4,6 +4,7 @@ import { FilterCheckbox } from "@/components/shared/filter-checkbox"
 import { Input } from "@/components/ui"
 import { cn } from "cn"
 import { RangeSlider } from "@/components/shared/range-slider"
+import { CheckboxFiltersGroup } from "@/components/shared/checkbox-filters-group"
 
 interface Props {
   className?: string
@@ -34,7 +35,31 @@ export const Filters: React.FC<Props> = ({ className }) => {
         <RangeSlider min={0} max={98000} step={10} value={[0, 98000]} />
       </div>
 
-
+      <CheckboxFiltersGroup
+        title="Категории"
+        defaultItems={[
+          { text: "Видеокарты", value: "1" },
+          { text: "Процессоры", value: "2" },
+          { text: "Блоки питания", value: "3" },
+          { text: "Материнские платы", value: "4" },
+          { text: "Оперативная память", value: "5" },
+          { text: "Жесткие диски", value: "6" },
+        ]}
+        items={[
+          { text: "Видеокарты", value: "1" },
+          { text: "Процессоры", value: "2" },
+          { text: "Блоки питания", value: "3" },
+          { text: "Материнские платы", value: "4" },
+          { text: "Оперативная память", value: "5" },
+          { text: "Жесткие диски", value: "6" },
+          { text: "Видеокарты", value: "1" },
+          { text: "Процессоры", value: "2" },
+          { text: "Блоки питания", value: "3" },
+          { text: "Материнские платы", value: "4" },
+          { text: "Оперативная память", value: "5" },
+          { text: "Жесткие диски", value: "6" },
+        ]}
+      />
     </aside>
   )
 }
