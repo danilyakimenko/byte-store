@@ -12,7 +12,7 @@ interface Props {
 
 export const Filters: React.FC<Props> = ({ className }) => {
   return (
-    <aside className={cn("grid gap-7", className)}>
+    <aside className={cn("flex flex-col gap-6", className)}>
       <Title className="font-bold" size="sm" text="Фильтрация" />
 
       <div className="grid gap-4">

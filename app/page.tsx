@@ -1,16 +1,132 @@
-import { Filters, Title, TopBar } from "@/components/shared"
+import {
+  Filters,
+  ProductCard,
+  ProductsGroupList,
+  Title,
+  TopBar,
+} from "@/components/shared"
 
 export default function Page() {
   return (
     <>
-      <Title className="font-extrabold" size="lg" text="Все товары" />
+      <Title
+        className="font-extrabold"
+        size="lg"
+        text="Все товары"
+      />
       <TopBar />
-      <section className="grid grid-cols-[250px_1fr] gap-15 my-10">
+      <section className="my-10 grid grid-cols-[250px_1fr] gap-20">
         <Filters />
-        <section>
-          <h2 className="sr-only">Список товаров</h2>
-          Список товаров
-        </section>
+        <div>
+          <ProductsGroupList
+            title="Комплектующие для ПК"
+            products={[
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+            ]}
+            categoryId={1}
+          />
+          <ProductsGroupList
+            title="Бытовые товары"
+            products={[
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+              {
+                id: 0,
+                name: "RTX 5090",
+                price: 395,
+                imageSrc: "https://moqimg.ru/215x215.png",
+              },
+            ]}
+            categoryId={1}
+          />
+        </div>
       </section>
     </>
   )
