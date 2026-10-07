@@ -14,7 +14,10 @@ export const Header: React.FC<Props> = ({ className }) => {
   return (
     <header className={cn("border border-b", className)}>
       <Container className="flex items-center justify-between py-8">
-        <Link className="flex items-center gap-4" href="/">
+        <Link
+          className="flex items-center gap-4"
+          href="/"
+        >
           <Image
             src="https://moqimg.ru/35x35.png"
             alt="Logo"
@@ -30,7 +33,10 @@ export const Header: React.FC<Props> = ({ className }) => {
         </Link>
 
         <div className="item-center flex gap-3">
-          <Button className="item-center flex gap-1" variant="outline">
+          <Button
+            className="item-center flex gap-1"
+            variant="outline"
+          >
             <User size={16} />
             Войти
           </Button>
@@ -39,7 +45,11 @@ export const Header: React.FC<Props> = ({ className }) => {
               <b>520 ₽</b>
               <span className="mx-3 h-full w-[1px] bg-white/30" />
               <div className="item-center flex -translate-x-2 gap-1 transition duration-200 group-hover:opacity-0">
-                <ShoppingCart className="relative" size={16} strokeWidth={2} />
+                <ShoppingCart
+                  className="relative"
+                  size={16}
+                  strokeWidth={2}
+                />
                 <b>3</b>
               </div>
               <ArrowRight

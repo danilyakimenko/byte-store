@@ -19,7 +19,7 @@ export const ProductsGroup: React.FC<Props> = ({
 }) => {
   return (
     <section className={className}>
-      <Title className="font-bold" size="md" text={title}/>
+      <Title className="font-bold" size="lg" text={title}/>
       <ul className="grid grid-cols-3 gap-[50px]">
         {products.map(({ id, name, imageSrc, price }) => (
           <li key={id}>

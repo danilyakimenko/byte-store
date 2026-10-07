@@ -2,22 +2,27 @@ import React from "react"
 import { Title } from "@/components/shared/title"
 import { FilterCheckbox } from "@/components/shared/filter-checkbox"
 import { Input } from "@/components/ui"
-import { cn } from "cn"
 import { RangeSlider } from "@/components/shared/range-slider"
 import { CheckboxFiltersGroup } from "@/components/shared/checkbox-filters-group"
 
-interface Props {
-  className?: string
-}
-
-export const Filters: React.FC<Props> = ({ className }) => {
+export const Filters = () => {
   return (
-    <aside className={cn("flex flex-col gap-6", className)}>
-      <Title className="font-bold" size="sm" text="Фильтрация" />
+    <aside className="flex flex-col gap-6">
+      <Title
+        className="font-bold"
+        size="sm"
+        text="Фильтрация"
+      />
 
       <div className="grid gap-4">
-        <FilterCheckbox text="Можно собирать" value="1" />
-        <FilterCheckbox text="Новинки" value="2" />
+        <FilterCheckbox
+          text="Можно собирать"
+          value="1"
+        />
+        <FilterCheckbox
+          text="Новинки"
+          value="2"
+        />
       </div>
 
       <div className="grid gap-3">
@@ -30,9 +35,19 @@ export const Filters: React.FC<Props> = ({ className }) => {
             max={98000}
             defaultValue={0}
           />
-          <Input type="number" placeholder="98000" min={100} max={98000} />
+          <Input
+            type="number"
+            placeholder="98000"
+            min={100}
+            max={98000}
+          />
         </div>
-        <RangeSlider min={0} max={98000} step={10} value={[0, 98000]} />
+        <RangeSlider
+          min={0}
+          max={98000}
+          step={10}
+          value={[0, 98000]}
+        />
       </div>
 
       <CheckboxFiltersGroup
