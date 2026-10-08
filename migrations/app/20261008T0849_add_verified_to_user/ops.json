@@ -1,0 +1,44 @@
+[
+  {
+    "id": "column.public.User.verified",
+    "label": "Add column \"verified\" to \"User\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "verified",
+        "table": "User"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"verified\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "User",
+          "verified"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"verified\"",
+        "sql": "ALTER TABLE \"public\".\"User\" ADD COLUMN \"verified\" timestamptz"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"verified\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "User",
+          "verified"
+        ]
+      }
+    ]
+  }
+]

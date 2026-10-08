@@ -1,18 +1,9 @@
-// Define database connection via the `DATABASE_URL` env var
-datasource db {
-  provider = "postgresql"
-}
+// use prisma-8
 
-// Define custom output path for generated Prisma Client
-generator client {
-  provider = "prisma-client-js"
-  output   = "/app/generated/prisma-client"
-}
-
-// Example data model
 model User {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  email     String   @unique
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  email     String    @unique
   name      String?
+  verified  DateTime?
 }
