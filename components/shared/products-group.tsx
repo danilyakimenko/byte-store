@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useEffect, useRef } from "react"
+import { FC, RefObject, useEffect, useRef } from "react"
 import { useIntersection } from "react-use"
 import { ProductCard } from "@/components/shared/product-card"
 import { Title } from "@/components/shared/title"
@@ -20,10 +20,14 @@ export const ProductsGroup: FC<Props> = ({
   categoryId,
 }) => {
   const setActiveCategoryId = useCategoryStore((state) => state.setActiveId)
-  const intersectionRef = useRef(null)
-  const intersection = useIntersection(intersectionRef, {
-    threshold: 0.4,
-  })
+  const intersectionRef = useRef<HTMLElement>(null)
+
+  const intersection = useIntersection(
+    intersectionRef as RefObject<HTMLElement>,
+    {
+      threshold: 0.4,
+    }
+  )
 
   useEffect(() => {
     if (intersection?.isIntersecting) {
